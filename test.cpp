@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     memes::println(m);
     char c[]="acards";
     c[0]='m';
-    memes::println(std::tuple{"a",1,1.23,"|",std::pair{c,std::string{"ds"}}});
+    memes::println(std::tuple{"a",1,1.23,'|',std::pair{c,std::string{"ds"}}});
 
     return 0;
 }
