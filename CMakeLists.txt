@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(pretty_pirnt VERSION 0.1.0)
+
+include(CTest)
+enable_testing()
+find_package(fmt REQUIRED )
+
+add_library(pretty_pirnt INTERFACE)
+target_link_libraries(pretty_pirnt INTERFACE fmt::fmt)
+target_include_directories(pretty_pirnt INTERFACE include)
+target_compile_features(pretty_pirnt INTERFACE cxx_std_20)
+add_executable(print test.cpp)
+target_link_libraries(print PUBLIC pretty_pirnt )
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
